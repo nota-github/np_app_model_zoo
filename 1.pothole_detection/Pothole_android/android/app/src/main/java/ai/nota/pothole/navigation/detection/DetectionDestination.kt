@@ -17,10 +17,10 @@ fun NavGraphBuilder.installDetectionDestination() {
     composable(
         route = DetectionDestination.route,
         arguments = listOf(
-            navArgument("modelType") { defaultValue = ModelType.Original.name }
+            navArgument("modelType") { defaultValue = ModelType.Nano.name }
         )
     ) {
-        val modelType = it.arguments?.getString("modelType") ?: ModelType.Original.name
+        val modelType = it.arguments?.getString("modelType") ?: ModelType.Nano.name
         DetectionScreen(modelType)
     }
 }

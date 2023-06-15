@@ -19,16 +19,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 enum class ModelType {
-    Original,
-    Retrain10,
-    Retrain20,
-    Retrain30,
-    Retrain40,
-    Retrain50,
-    Retrain60,
-    Retrain70,
-    Retrain80,
-    Retrain90,
+    Nano,
+    Nano70,
+    Medium60
 }
 
 
@@ -36,7 +29,7 @@ enum class ModelType {
 fun HomeContent(
     navigateToDetectionScreen: (modelType: String) -> Unit
 ) {
-    var selectedModelType by rememberSaveable { mutableStateOf(ModelType.Original) }
+    var selectedModelType by rememberSaveable { mutableStateOf(ModelType.Nano) }
 
     fun isSelectedType(checkableType: ModelType): Boolean = selectedModelType == checkableType
     fun onChangeState(newType: ModelType) {
